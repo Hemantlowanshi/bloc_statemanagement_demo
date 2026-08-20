@@ -18,7 +18,7 @@ class _LauncherPageState extends State<LauncherPage> {
     context.read<InfoPackageCubit>().getVersion();
     _navigate();
   }
-  
+
   void _navigate(){
     Future.delayed(Duration(seconds: 3),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginPage()));
