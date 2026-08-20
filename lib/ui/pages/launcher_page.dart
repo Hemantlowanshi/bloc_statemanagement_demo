@@ -1,4 +1,5 @@
 import 'package:bloc_statemanagement_demo/cubit/info_package_cubit.dart';
+import 'package:bloc_statemanagement_demo/ui/pages/login_page.dart';
 import 'package:bloc_statemanagement_demo/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +16,13 @@ class _LauncherPageState extends State<LauncherPage> {
   void initState() {
     super.initState();
     context.read<InfoPackageCubit>().getVersion();
+    _navigate();
+  }
+  
+  void _navigate(){
+    Future.delayed(Duration(seconds: 3),(){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+    });
   }
 
   @override
@@ -23,7 +31,7 @@ class _LauncherPageState extends State<LauncherPage> {
       body: Stack(
         children: [
           Center(
-            child: AppLogo(height: 50,width: 50,),
+            child: AppLogo(height: 150,width: 150,),
           ),
 
           // version text
