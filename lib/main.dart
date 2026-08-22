@@ -1,15 +1,20 @@
-
+import 'package:bloc_statemanagement_demo/cubit/Login/login_bloc.dart';
 import 'package:bloc_statemanagement_demo/cubit/info_package_cubit.dart';
 import 'package:bloc_statemanagement_demo/ui/pages/launcher_page.dart';
-import 'package:bloc_statemanagement_demo/ui/pages/login_page.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(
-    BlocProvider(
-      create: (context) => InfoPackageCubit(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => LoginBloc(),
+        ),
+        BlocProvider(
+          create: (context) => InfoPackageCubit(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
