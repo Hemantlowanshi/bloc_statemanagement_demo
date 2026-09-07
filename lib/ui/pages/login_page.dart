@@ -383,7 +383,7 @@ class _LoginPageState extends State<LoginPage> {
                           MainAxisAlignment.center,
                           children: [
                             AppText.medium(
-                              "Don't have an account?",
+                              "Don't have  account?",
                               fontSize: 12,
                               color: Colors.grey,
                             ),
